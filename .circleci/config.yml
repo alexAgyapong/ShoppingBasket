@@ -5,7 +5,12 @@ jobs:
       - image: microsoft/dotnet:2.1.300-preview2-sdk-alpine
     steps:
       - checkout
-      - run: cd ShoppingBasket
-      - run: dotnet restore
-      - run: dotnet build
-      - run: dotnet test --no-build Build.Tests
+      - run:
+          command: dotnet restore
+          working_directory: ShoppingBasket
+      - run:
+          command: dotnet build
+          working_directory: ShoppingBasket
+      - run:
+          command: dotnet test --no-build Build.Tests
+          working_directory: ShoppingBasket
