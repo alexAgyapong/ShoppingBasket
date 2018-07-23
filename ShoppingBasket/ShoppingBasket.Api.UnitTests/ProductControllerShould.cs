@@ -1,7 +1,7 @@
+using AutoFixture;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
-using Ploeh.AutoFixture;
 using ShoppingBasket.Api.Controllers;
 using ShoppingBasket.Api.Model;
 
@@ -15,7 +15,7 @@ namespace ShoppingBasket.Api.UnitTests
         [SetUp]
         public void SetUp()
         {
-            fixture = new Fixture(); 
+            fixture = new Fixture();
         }
         [Test]
         public void Return_created_when_a_product_is_successfully_added_to_basket()
@@ -25,7 +25,7 @@ namespace ShoppingBasket.Api.UnitTests
 
             var response = productController.AddProduct(fixture.Create<string>(), product) as StatusCodeResult;
 
-            Assert.That(response.StatusCode,Is.EqualTo(StatusCodes.Status200OK));
+            Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status200OK));
         }
     }
 }
