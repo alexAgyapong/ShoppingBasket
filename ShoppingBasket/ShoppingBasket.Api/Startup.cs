@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ShoppingBasket.Api.Service;
 
 namespace ShoppingBasket.Api
 {
@@ -23,6 +24,7 @@ namespace ShoppingBasket.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<BasketService>();
             services.AddMvc();
         }
 
