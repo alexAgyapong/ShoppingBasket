@@ -12,5 +12,5 @@ jobs:
           command: dotnet build
           working_directory: ShoppingBasket
       - run:
-          command: dotnet test --no-build Build.Tests
+          command: dotnet test
           working_directory: ShoppingBasket
