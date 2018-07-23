@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Api", "ShoppingBasket.Api\ShoppingBasket.Api.csproj", "{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Api.UnitTests", "ShoppingBasket.Api.Tests\ShoppingBasket.Api.UnitTests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Api.IntegrationTests", "ShoppingBasket.Api.IntegrationTests\ShoppingBasket.Api.IntegrationTests.csproj", "{E445B48A-61C1-4C48-80CC-79A4D387BA88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Api.IntegrationTests", "ShoppingBasket.Api.IntegrationTests\ShoppingBasket.Api.IntegrationTests.csproj", "{E445B48A-61C1-4C48-80CC-79A4D387BA88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Api.UnitTests", "ShoppingBasket.Api.UnitTests\ShoppingBasket.Api.UnitTests.csproj", "{CD2E02F9-C809-4357-A69D-62AD07DE6CD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E445B48A-61C1-4C48-80CC-79A4D387BA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E445B48A-61C1-4C48-80CC-79A4D387BA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E445B48A-61C1-4C48-80CC-79A4D387BA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E445B48A-61C1-4C48-80CC-79A4D387BA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2E02F9-C809-4357-A69D-62AD07DE6CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2E02F9-C809-4357-A69D-62AD07DE6CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2E02F9-C809-4357-A69D-62AD07DE6CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2E02F9-C809-4357-A69D-62AD07DE6CD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

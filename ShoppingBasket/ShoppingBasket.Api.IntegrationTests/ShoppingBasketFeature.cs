@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 namespace ShoppingBasket.Api.IntegrationTests
 {
     [TestFixture]
-    public class ShoppingBasketFeatureInt
+    public class ShoppingBasketFeature
     {
         private TestServer server;
         private const string PostUrl = "api/{userId}/basket";
