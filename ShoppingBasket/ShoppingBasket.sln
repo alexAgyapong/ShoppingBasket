@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Api", "ShoppingBasket.Api\ShoppingBasket.Api.csproj", "{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Api", "ShoppingBasket.Api\ShoppingBasket.Api.csproj", "{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Api.UnitTests", "ShoppingBasket.Api.UnitTests\ShoppingBasket.Api.UnitTests.csproj", "{B6B35A0A-CC76-4CF7-A7FB-C55C74EB2D23}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Tests", "ShoppingBasket.Tests\ShoppingBasket.Tests.csproj", "{781B1C88-1B01-43D5-BB51-11E43081E7E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Api.Tests", "ShoppingBasket.Api.Tests\ShoppingBasket.Api.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +17,10 @@ Global
 		{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{397E0ABA-1C25-4C7A-B5A9-7B6BECBB2E89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6B35A0A-CC76-4CF7-A7FB-C55C74EB2D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6B35A0A-CC76-4CF7-A7FB-C55C74EB2D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6B35A0A-CC76-4CF7-A7FB-C55C74EB2D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6B35A0A-CC76-4CF7-A7FB-C55C74EB2D23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{781B1C88-1B01-43D5-BB51-11E43081E7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{781B1C88-1B01-43D5-BB51-11E43081E7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{781B1C88-1B01-43D5-BB51-11E43081E7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{781B1C88-1B01-43D5-BB51-11E43081E7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
