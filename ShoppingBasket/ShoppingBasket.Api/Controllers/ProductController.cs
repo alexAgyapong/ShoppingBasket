@@ -9,7 +9,7 @@ namespace ShoppingBasket.Api.Controllers
     [Produces("application/json")]
     public class ProductController : Controller
     {
-        private BasketService basketService;
+        private readonly BasketService basketService;
 
         public ProductController(BasketService basketService)
         {
