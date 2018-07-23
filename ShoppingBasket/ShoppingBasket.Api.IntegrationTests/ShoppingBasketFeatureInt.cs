@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using NUnit.Framework;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.Configuration;
+
 namespace ShoppingBasket.Api.IntegrationTests
 {
     [TestFixture]
@@ -17,8 +19,7 @@ namespace ShoppingBasket.Api.IntegrationTests
         [SetUp]
         public void InitialSetup()
         {
-            var builder = new WebHostBuilder().UseStartup<Startup>();
-            server = new TestServer(builder);
+            server = CreateTestServer();
             Client = server.CreateClient();
         }
         [Test]
@@ -28,6 +29,20 @@ namespace ShoppingBasket.Api.IntegrationTests
                 new StringContent("", Encoding.UTF8, "application/json"));
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
+        }
+
+        private static TestServer CreateTestServer()
+        {
+            var projectDir = System.IO.Directory.GetCurrentDirectory();
+            var server = new TestServer(new WebHostBuilder()
+                .UseEnvironment("Development")
+                .UseContentRoot(projectDir)
+                .UseConfiguration(new ConfigurationBuilder()
+                    .SetBasePath(projectDir)
+                    //.AddJsonFile("appsettings.json")
+                    .Build())
+                .UseStartup<Startup>());
+            return server;
         }
     }
 }
