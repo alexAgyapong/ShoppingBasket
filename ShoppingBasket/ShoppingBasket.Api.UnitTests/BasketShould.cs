@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using AutoFixture;
-using Moq;
 using NUnit.Framework;
 using ShoppingBasket.Api.Model;
 using ShoppingBasket.Api.Repository;
-using ShoppingBasket.Api.Service;
 
 namespace ShoppingBasket.Api.UnitTests
 {

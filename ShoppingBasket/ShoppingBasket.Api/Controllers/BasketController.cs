@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingBasket.Api.Model;
@@ -21,11 +18,11 @@ namespace ShoppingBasket.Api.Controllers
 
         [HttpPost]
         [Route("api/baskets/{userId}/basket")]
-        public IActionResult AddToBasket([FromRoute] string userId, [FromBody] Product product,int quantity)
+        public IActionResult AddToBasket([FromRoute] string userId, [FromBody] Product product, int quantity)
         {
             try
             {
-                basketService.AddItemToBasket(userId, product,quantity);
+                basketService.AddItemToBasket(userId, product, quantity);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception)

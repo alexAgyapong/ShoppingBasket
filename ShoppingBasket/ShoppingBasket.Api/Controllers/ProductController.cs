@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ShoppingBasket.Api.Model;
 using Microsoft.AspNetCore.Http;
+using ShoppingBasket.Api.Repository;
 using ShoppingBasket.Api.Service;
 
 namespace ShoppingBasket.Api.Controllers
@@ -9,21 +10,21 @@ namespace ShoppingBasket.Api.Controllers
     [Produces("application/json")]
     public class ProductController : Controller
     {
-        private readonly BasketService basketService;
+        private readonly ProductRepository productRepository;
 
-        public ProductController(BasketService basketService)
+        public ProductController(ProductRepository productRepository)
         {
-            this.basketService = basketService;
+            this.productRepository = productRepository;
         }
 
         // POST: api/Product
         [HttpPost]
-        [Route("api/products/{userId}/product")]
-        public IActionResult AddProduct([FromRoute]string userId, [FromBody] Product product, int quantity)
+        [Route("api/products")]
+        public IActionResult AddProduct([FromBody] Product product, int quantity)
         {
             try
             {
-                basketService.AddItemToBasket(userId,product,quantity);
+                productRepository.Add(product, quantity);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception)

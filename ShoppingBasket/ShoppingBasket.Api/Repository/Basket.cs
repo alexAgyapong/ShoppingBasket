@@ -8,10 +8,6 @@ namespace ShoppingBasket.Api.Repository
     {
         private readonly ICollection<BasketItem> basketItems = new List<BasketItem>();
 
-        public virtual IEnumerable<Product> GetProducts()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public virtual void AddItem(Product product, int quantity)
         {
@@ -31,7 +27,7 @@ namespace ShoppingBasket.Api.Repository
             }
         }
 
-        public IEnumerable<BasketItem> GetBasket()
+        public virtual IEnumerable<BasketItem> GetBasket()
         {
             return basketItems;
         }
