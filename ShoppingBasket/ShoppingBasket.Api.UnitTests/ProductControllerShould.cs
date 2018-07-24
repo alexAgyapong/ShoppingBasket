@@ -27,7 +27,7 @@ namespace ShoppingBasket.Api.UnitTests
             var productController = new ProductController(basketServiceMock.Object);
             var product = fixture.Create<Product>();
 
-            var response = productController.AddProduct(fixture.Create<string>(), product) as StatusCodeResult;
+            var response = productController.AddProduct(fixture.Create<string>(), product,fixture.Create<int>()) as StatusCodeResult;
 
             Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status201Created));
         }
@@ -37,11 +37,11 @@ namespace ShoppingBasket.Api.UnitTests
         {
             var productController = new ProductController(basketServiceMock.Object);
             var product = fixture.Create<Product>();
-            basketServiceMock.Setup(b => b.AddItem(It.IsAny<string>(), It.IsAny<Product>()));
+            basketServiceMock.Setup(b => b.AddItemToBasket(It.IsAny<string>(), It.IsAny<Product>(),It.IsAny<int>()));
 
-            var response = productController.AddProduct(fixture.Create<string>(), product) as StatusCodeResult;
+            var response = productController.AddProduct(fixture.Create<string>(), product,fixture.Create<int>()) as StatusCodeResult;
 
-            basketServiceMock.Verify(b => b.AddItem(It.IsAny<string>(), It.IsAny<Product>()),Times.Once());
+            basketServiceMock.Verify(b => b.AddItemToBasket(It.IsAny<string>(), It.IsAny<Product>(), It.IsAny<int>()),Times.Once());
             Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status201Created));
         }
     }

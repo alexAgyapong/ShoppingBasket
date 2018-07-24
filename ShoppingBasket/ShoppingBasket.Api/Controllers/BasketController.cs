@@ -12,7 +12,7 @@ namespace ShoppingBasket.Api.Controllers
     [Produces("application/json")]
     public class BasketController : Controller
     {
-        private BasketService basketService;
+        private readonly BasketService basketService;
 
         public BasketController(BasketService basketService)
         {
@@ -21,11 +21,11 @@ namespace ShoppingBasket.Api.Controllers
 
         [HttpPost]
         [Route("api/baskets/{userId}/basket")]
-        public IActionResult AddToBasket([FromRoute] string userId, [FromBody] Product product)
+        public IActionResult AddToBasket([FromRoute] string userId, [FromBody] Product product,int quantity)
         {
             try
             {
-                basketService.AddItem(userId, product);
+                basketService.AddItemToBasket(userId, product,quantity);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception)

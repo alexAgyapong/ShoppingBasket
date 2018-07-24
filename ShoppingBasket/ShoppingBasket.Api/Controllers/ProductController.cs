@@ -19,11 +19,11 @@ namespace ShoppingBasket.Api.Controllers
         // POST: api/Product
         [HttpPost]
         [Route("api/products/{userId}/product")]
-        public IActionResult AddProduct([FromRoute]string userId, [FromBody] Product product)
+        public IActionResult AddProduct([FromRoute]string userId, [FromBody] Product product, int quantity)
         {
             try
             {
-                basketService.AddItem(userId,product);
+                basketService.AddItemToBasket(userId,product,quantity);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception)
