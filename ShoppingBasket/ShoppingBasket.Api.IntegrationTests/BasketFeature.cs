@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using AutoFixture;
 using NUnit.Framework;
 using ShoppingBasket.Api.Model;
