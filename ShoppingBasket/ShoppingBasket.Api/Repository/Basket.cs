@@ -31,6 +31,10 @@ namespace ShoppingBasket.Api.Repository
             }
         }
 
+        public IEnumerable<BasketItem> GetBasket()
+        {
+            return basketItems;
+        }
     }
 
     public class BasketItem
