@@ -28,7 +28,7 @@ namespace ShoppingBasket.Api.UnitTests
             var productController = new ProductController(productRepositoryMock.Object);
             var product = fixture.Create<Product>();
 
-            var response = productController.AddProduct(product,fixture.Create<int>()) as StatusCodeResult;
+            var response = productController.AddProduct(product) as StatusCodeResult;
 
             Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status201Created));
         }
@@ -38,11 +38,11 @@ namespace ShoppingBasket.Api.UnitTests
         {
             var productController = new ProductController(productRepositoryMock.Object);
             var product = fixture.Create<Product>();
-            productRepositoryMock.Setup(b => b.Add(It.IsAny<Product>(),It.IsAny<int>()));
+            productRepositoryMock.Setup(b => b.Add(It.IsAny<Product>()));
 
-            var response = productController.AddProduct(product,fixture.Create<int>()) as StatusCodeResult;
+            var response = productController.AddProduct(product) as StatusCodeResult;
 
-            productRepositoryMock.Verify(b => b.Add(It.IsAny<Product>(), It.IsAny<int>()),Times.Once());
+            productRepositoryMock.Verify(b => b.Add(It.IsAny<Product>()),Times.Once());
             Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status201Created));
         }
     }
