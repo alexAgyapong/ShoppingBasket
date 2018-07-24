@@ -6,8 +6,12 @@ namespace ShoppingBasket.Api.Repository
 {
     public class Basket
     {
-        private readonly ICollection<BasketItem> basketItems = new List<BasketItem>();
+        private readonly ICollection<BasketItem> basketItems;
 
+        public Basket()
+        {
+            basketItems = new List<BasketItem>();
+        }
 
         public virtual void AddItem(Product product, int quantity)
         {
@@ -26,18 +30,9 @@ namespace ShoppingBasket.Api.Repository
                 basketItem.Quantity += quantity;
             }
         }
-
         public virtual IEnumerable<BasketItem> GetBasket()
         {
             return basketItems;
         }
     }
-
-    public class BasketItem
-    {
-        public int ItemId { get; set; }
-        public Product Product { get; set; }
-        public int Quantity { get; set; }
-    }
-
 }

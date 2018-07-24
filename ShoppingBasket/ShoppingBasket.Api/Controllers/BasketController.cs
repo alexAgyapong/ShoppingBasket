@@ -17,8 +17,9 @@ namespace ShoppingBasket.Api.Controllers
         }
 
         [HttpPost]
-        [Route("api/baskets/{userId}/basket")]
-        public IActionResult AddToBasket([FromRoute] string userId, [FromBody] Product product, int quantity)
+       // [Route("api/baskets/{userId}/basket")]
+        [Route("/api/baskets")]
+        public IActionResult AddToBasket([FromRoute] string userId, [FromBody] Product product, [FromBody]int quantity)
         {
             try
             {

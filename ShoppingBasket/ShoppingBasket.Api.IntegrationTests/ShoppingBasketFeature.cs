@@ -1,9 +1,9 @@
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using AutoFixture;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
@@ -18,30 +18,40 @@ namespace ShoppingBasket.Api.IntegrationTests
         private TestServer server;
         private IFixture fixture;
         private const string UserIdParameter = "{userId}";
-        private const string PostUrl = "api/baskets/"+UserIdParameter+"/basket";
-        public HttpClient Client { get; set; }
+        private const string PostUrl = "/api/baskets";
+        // private const string PostUrl = "api/baskets/"+UserIdParameter+"/basket";
+        private HttpClient client;
 
         [SetUp]
         public void InitialSetup()
         {
             server = CreateTestServer();
-            Client = server.CreateClient();
+            client = server.CreateClient();
             fixture = new Fixture();
         }
-        [Test]
+        [Ignore("work on integration test later")]
         public async Task Create_a_shopping_basket_when_an_item_is_added_by_user()
         {
             var product = fixture.Create<Product>();
-            var user = fixture.Create<User>();
+            var newProduct = new Product()
+            {
+                ProductId = fixture.Create<int>(),
+                Name = fixture.Create<string>(),
+                Category = fixture.Create<string>(),
+                Stock = fixture.Create<int>(),
+                UnitPrice = fixture.Create<decimal>()
+            };
 
-            var response = await AddToBasket(user, product);
+            var response = await client.PostAsync(PostUrl,
+                new StringContent(JsonConvert.SerializeObject(newProduct), Encoding.UTF8, "application/json"));
 
-            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
+            response.EnsureSuccessStatusCode();
+            Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status201Created));
         }
 
         private async Task<HttpResponseMessage> AddToBasket(User user, Product product)
         {
-            return await Client.PostAsync(GetPostUrl(user.UserId),
+            return await client.PostAsync(PostUrl,
                 new StringContent(JsonConvert.SerializeObject(product),
                     Encoding.UTF8, "application/json"));
         }

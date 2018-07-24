@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ShoppingBasket.Api.Repository;
 using ShoppingBasket.Api.Service;
 
 namespace ShoppingBasket.Api
@@ -25,6 +26,7 @@ namespace ShoppingBasket.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<BasketService>();
+            services.AddTransient<ProductRepository>();
             services.AddMvc();
         }
 
