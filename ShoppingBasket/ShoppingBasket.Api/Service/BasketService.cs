@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using ShoppingBasket.Api.Model;
 using ShoppingBasket.Api.Repository;
 
@@ -14,9 +12,9 @@ namespace ShoppingBasket.Api.Service
             this.basket = basket;
         }
 
-        public virtual void AddItemToBasket(string userId, Product product, int quantity)
+        public virtual void AddItemToBasket(Product product, int quantity)
         {
-            if (string.IsNullOrEmpty(userId) && product == null)
+            if (product == null)
             {
                 throw new InvalidOperationException();
             }

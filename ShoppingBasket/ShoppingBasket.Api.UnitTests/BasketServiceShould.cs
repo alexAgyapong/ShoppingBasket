@@ -32,9 +32,9 @@ namespace ShoppingBasket.Api.UnitTests
             var product3 = fixture.Create<Product>();
             basketMock.Setup(b => b.AddItem(It.IsAny<Product>(), It.IsAny<int>()));
 
-            basketService.AddItemToBasket(userId, product, 1);
-            basketService.AddItemToBasket(userId, product2, 2);
-            basketService.AddItemToBasket(userId, product3, 3);
+            basketService.AddItemToBasket(product, 1);
+            basketService.AddItemToBasket(product2, 2);
+            basketService.AddItemToBasket(product3, 3);
 
             basketMock.Verify(b => b.AddItem(It.IsAny<Product>(), It.IsAny<int>()), Times.Exactly(3));
         }

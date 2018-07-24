@@ -29,11 +29,13 @@ namespace ShoppingBasket.Api.UnitTests
         [Test]
         public void Create_a_basket_when_first_item_is_added()
         {
-            basketServiceMock.Setup(b => b.AddItemToBasket(It.IsAny<string>(), It.IsAny<Product>(), It.IsAny<int>()));
-            var response = basketController
-                           .AddToBasket(fixture.Create<string>(), fixture.Create<Product>(), fixture.Create<int>()) as StatusCodeResult;
+            basketServiceMock.Setup(b => b.AddItemToBasket(It.IsAny<Product>(),It.IsAny<int>()));
 
-            basketServiceMock.Verify(b => b.AddItemToBasket(It.IsAny<string>(), It.IsAny<Product>(), It.IsAny<int>()));
+            var response = basketController
+                           .AddToBasket(fixture.Create<Product>(),
+                           fixture.Create<int>()) as StatusCodeResult;
+
+            basketServiceMock.Verify(b => b.AddItemToBasket( It.IsAny<Product>(), It.IsAny<int>()));
             Assert.That(response.StatusCode, Is.EqualTo(StatusCodes.Status201Created));
         }
     }

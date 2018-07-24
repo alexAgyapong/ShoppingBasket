@@ -22,7 +22,6 @@ namespace ShoppingBasket.Api.UnitTests
         [Test]
         public void Add_item_to_basket()
         {
-            var userId = fixture.Create<string>();
             var product = fixture.Create<Product>();
             var product2 = fixture.Create<Product>();
             var product3 = fixture.Create<Product>();

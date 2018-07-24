@@ -5,7 +5,7 @@ namespace ShoppingBasket.Api.Repository
 {
     public class ProductRepository
     {
-        private List<Product> products;
+        private readonly List<Product> products;
 
         public ProductRepository()
         {
